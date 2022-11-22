@@ -38,11 +38,9 @@ function App() {
     const categories = Object.keys(words)
     const category =
       categories[Math.floor(Math.random() * Object.keys(categories).length)]
-    console.log(category, "Categoria escolhida")
 
     //pick a random word
     const word = words[category][Math.floor(Math.random() * words[category].length)]
-    console.log(word, "Palavra escolhida")
     return { word, category }
   },[words])
 
@@ -53,14 +51,11 @@ function App() {
     clearLetterStates()
     // pick word and pick category
     const { word, category } = pickedWordAndCategory()
-    console.log(word, category)
-
+  
     // array of letters
     let wordLetters = word.split("")
-    console.log(wordLetters)
     wordLetters = wordLetters.map((l) => l.toLowerCase())
-    console.log(wordLetters)
-
+   
     //fill states
     setPickedWord(word)
     setPickedCategory(category)
@@ -125,13 +120,8 @@ function App() {
       startGame()
     }
 
-    console.log(uniqueLetters)
+  
   },[guessedLetters, letters, startGame, gameStage])
-
-
-
-  console.log(guessedLetters, "Acertos")
-  console.log(wrongLetters, "Erros");
 
   // restarts the game
   const tryAgain = () => {

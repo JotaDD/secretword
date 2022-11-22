@@ -13,7 +13,7 @@ const Game = ({
 }) => {
   const [letter, setLetter] = useState("")
   const letterInputRef = useRef(null)
-  console.log(guessedLetters, "Guessed Letter Game")
+
 
   const handleLetter = (event) => {
     setLetter(event.target.value)
